@@ -1,0 +1,226 @@
+{
+  "version": "12.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "CdkWorkshopStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CdkWorkshopStack.assets.json",
+        "requiresBootstrapStackVersion": 4,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CdkWorkshopStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "CdkWorkshopStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4775a377c283178c85ef2cfa60de3f8d9284fdcea01fefc13ba8fa8be8d5973f.json",
+        "requiresBootstrapStackVersion": 4,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CdkWorkshopStack.assets"
+        ]
+      },
+      "dependencies": [
+        "CdkWorkshopStack.assets"
+      ],
+      "metadata": {
+        "/CdkWorkshopStack/HelloHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HelloHandlerServiceRole11EF7C63",
+            "trace": [
+              "new Role (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:72:22)",
+              "new Function (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:79:35)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/CdkWorkshopStack/HelloHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HelloHandler2E4FBA4D",
+            "trace": [
+              "new Function (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:135:26)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/CdkWorkshopStack/Table/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableCD117FA1",
+            "trace": [
+              "new Table (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:456:22)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/CdkWorkshopStack/MyFirstStream/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyFirstStream63B28502",
+            "trace": [
+              "new Stream (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\aws-kinesis\\lib\\stream.js:386:23)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/CdkWorkshopStack/AwsCdkKinesisEncryptedStreamsUnsupportedRegions": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AwsCdkKinesisEncryptedStreamsUnsupportedRegions",
+            "trace": [
+              "Stream.parseEncryption (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\aws-kinesis\\lib\\stream.js:442:17)",
+              "new Stream (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\aws-kinesis\\lib\\stream.js:385:58)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8154:58",
+              "Kernel._wrapSandboxCode (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8582:24)",
+              "Kernel._create (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8154:34)",
+              "Kernel.create (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7895:29)",
+              "KernelHost.processRequest (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/CdkWorkshopStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.js:22:30)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:128:9",
+              "visit (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:185:9)",
+              "visit (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:182:9)",
+              "injectMetadataResources (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:117:5)",
+              "Object.synthesize (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:17:5)",
+              "App.synth (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8582:24)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/CdkWorkshopStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.js:30:35)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:128:9",
+              "visit (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:185:9)",
+              "visit (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:182:9)",
+              "injectMetadataResources (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:117:5)",
+              "Object.synthesize (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:17:5)",
+              "App.synth (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8582:24)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/CdkWorkshopStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\default-synthesizer.js:434:19)",
+              "DefaultStackSynthesizer.synthesize (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\default-synthesizer.js:204:13)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:144:35",
+              "visit (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:185:9)",
+              "visit (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:182:9)",
+              "synthesizeTree (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:137:5)",
+              "Object.synthesize (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:33:5)",
+              "App.synth (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8582:24)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ],
+        "/CdkWorkshopStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\default-synthesizer.js:442:5)",
+              "DefaultStackSynthesizer.synthesize (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\stack-synthesizers\\default-synthesizer.js:204:13)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:144:35",
+              "visit (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:185:9)",
+              "visit (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:182:9)",
+              "synthesizeTree (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:137:5)",
+              "Object.synthesize (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.js:33:5)",
+              "App.synth (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-kernel-DFsMKE\\node_modules\\@aws-cdk\\core\\lib\\stage.js:100:41)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:134",
+              "Kernel._wrapSandboxCode (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8582:24)",
+              "C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:107",
+              "Kernel._ensureSync (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:8563:28)",
+              "Kernel.invoke (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:7970:34)",
+              "KernelHost.processRequest (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9479:36)",
+              "KernelHost.run (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9442:22)",
+              "Immediate._onImmediate (C:\\Users\\DELL\\AppData\\Local\\Temp\\jsii-java-runtime14840697642281021899\\lib\\program.js:9443:46)",
+              "processImmediate (internal/timers.js:461:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "CdkWorkshopStack"
+    }
+  }
+}
