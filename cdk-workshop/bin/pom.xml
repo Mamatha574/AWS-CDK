@@ -39,38 +39,29 @@
             <version>${cdk.version}</version>
         </dependency>
 
- <!-- Respective AWS Construct Libraries -->
-        <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>lambda</artifactId>
-            <version>${cdk.version}</version>
-        </dependency>
         <!-- Respective AWS Construct Libraries -->
         <dependency>
             <groupId>software.amazon.awscdk</groupId>
-            <artifactId>iot</artifactId>
+            <artifactId>sns</artifactId>
             <version>${cdk.version}</version>
         </dependency>
-        <!-- Respective AWS Construct Libraries -->
         <dependency>
             <groupId>software.amazon.awscdk</groupId>
-            <artifactId>dynamodb</artifactId>
+            <artifactId>sns-subscriptions</artifactId>
             <version>${cdk.version}</version>
         </dependency>
-        <!-- Respective AWS Construct Libraries -->
         <dependency>
             <groupId>software.amazon.awscdk</groupId>
-            <artifactId>s3</artifactId>
-            <version>${cdk.version}</version>
-        </dependency>
-        
-        <!-- Respective AWS Construct Libraries -->
-        <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>kinesis</artifactId>
+            <artifactId>sqs</artifactId>
             <version>${cdk.version}</version>
         </dependency>
 
+        <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <version>${junit.version}</version>
+          <scope>test</scope>
+        </dependency>
         <dependency>
           <groupId>org.junit.jupiter</groupId>
           <artifactId>junit-jupiter-engine</artifactId>

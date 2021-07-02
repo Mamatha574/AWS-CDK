@@ -9,132 +9,50 @@
         "path": "Tree",
         "constructInfo": {
           "fqn": "@aws-cdk/core.Construct",
-          "version": "1.108.1"
+          "version": "1.110.1"
         }
       },
       "CdkWorkshopStack": {
         "id": "CdkWorkshopStack",
         "path": "CdkWorkshopStack",
         "children": {
-          "HelloHandler": {
-            "id": "HelloHandler",
-            "path": "CdkWorkshopStack/HelloHandler",
+          "FSMBucket9": {
+            "id": "FSMBucket9",
+            "path": "CdkWorkshopStack/FSMBucket9",
             "children": {
-              "ServiceRole": {
-                "id": "ServiceRole",
-                "path": "CdkWorkshopStack/HelloHandler/ServiceRole",
-                "children": {
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "CdkWorkshopStack/HelloHandler/ServiceRole/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
-                      "aws:cdk:cloudformation:props": {
-                        "assumeRolePolicyDocument": {
-                          "Statement": [
-                            {
-                              "Action": "sts:AssumeRole",
-                              "Effect": "Allow",
-                              "Principal": {
-                                "Service": "lambda.amazonaws.com"
-                              }
-                            }
-                          ],
-                          "Version": "2012-10-17"
-                        },
-                        "managedPolicyArns": [
-                          {
-                            "Fn::Join": [
-                              "",
-                              [
-                                "arn:",
-                                {
-                                  "Ref": "AWS::Partition"
-                                },
-                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-                              ]
-                            ]
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "@aws-cdk/aws-iam.CfnRole",
-                      "version": "1.108.1"
-                    }
-                  }
-                },
+              "Notifications": {
+                "id": "Notifications",
+                "path": "CdkWorkshopStack/FSMBucket9/Notifications",
                 "constructInfo": {
-                  "fqn": "@aws-cdk/aws-iam.Role",
-                  "version": "1.108.1"
-                }
-              },
-              "Code": {
-                "id": "Code",
-                "path": "CdkWorkshopStack/HelloHandler/Code",
-                "children": {
-                  "Stage": {
-                    "id": "Stage",
-                    "path": "CdkWorkshopStack/HelloHandler/Code/Stage",
-                    "constructInfo": {
-                      "fqn": "@aws-cdk/core.AssetStaging",
-                      "version": "1.108.1"
-                    }
-                  },
-                  "AssetBucket": {
-                    "id": "AssetBucket",
-                    "path": "CdkWorkshopStack/HelloHandler/Code/AssetBucket",
-                    "constructInfo": {
-                      "fqn": "@aws-cdk/core.Resource",
-                      "version": "1.108.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "@aws-cdk/aws-s3-assets.Asset",
-                  "version": "1.108.1"
+                  "fqn": "@aws-cdk/core.Construct",
+                  "version": "1.110.1"
                 }
               },
               "Resource": {
                 "id": "Resource",
-                "path": "CdkWorkshopStack/HelloHandler/Resource",
+                "path": "CdkWorkshopStack/FSMBucket9/Resource",
                 "attributes": {
-                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
-                  "aws:cdk:cloudformation:props": {
-                    "code": {
-                      "s3Bucket": {
-                        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
-                      },
-                      "s3Key": "42da053b74a0642c4ae6eaff137c36841032b252951dec8c7ebdc06e26774a75.zip"
-                    },
-                    "role": {
-                      "Fn::GetAtt": [
-                        "HelloHandlerServiceRole11EF7C63",
-                        "Arn"
-                      ]
-                    },
-                    "handler": "hello.handler",
-                    "runtime": "nodejs10.x"
-                  }
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {}
                 },
                 "constructInfo": {
-                  "fqn": "@aws-cdk/aws-lambda.CfnFunction",
-                  "version": "1.108.1"
+                  "fqn": "@aws-cdk/aws-s3.CfnBucket",
+                  "version": "1.110.1"
                 }
               }
             },
             "constructInfo": {
-              "fqn": "@aws-cdk/aws-lambda.Function",
-              "version": "1.108.1"
+              "fqn": "@aws-cdk/aws-s3.Bucket",
+              "version": "1.110.1"
             }
           },
-          "Table": {
-            "id": "Table",
-            "path": "CdkWorkshopStack/Table",
+          "Fsm_table75": {
+            "id": "Fsm_table75",
+            "path": "CdkWorkshopStack/Fsm_table75",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "CdkWorkshopStack/Table/Resource",
+                "path": "CdkWorkshopStack/Fsm_table75/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
                   "aws:cdk:cloudformation:props": {
@@ -158,35 +76,163 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-dynamodb.CfnTable",
-                  "version": "1.108.1"
+                  "version": "1.110.1"
                 }
               },
               "ScalingRole": {
                 "id": "ScalingRole",
-                "path": "CdkWorkshopStack/Table/ScalingRole",
+                "path": "CdkWorkshopStack/Fsm_table75/ScalingRole",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.Resource",
-                  "version": "1.108.1"
+                  "version": "1.110.1"
+                }
+              },
+              "ReadScaling": {
+                "id": "ReadScaling",
+                "path": "CdkWorkshopStack/Fsm_table75/ReadScaling",
+                "children": {
+                  "Target": {
+                    "id": "Target",
+                    "path": "CdkWorkshopStack/Fsm_table75/ReadScaling/Target",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkWorkshopStack/Fsm_table75/ReadScaling/Target/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApplicationAutoScaling::ScalableTarget",
+                          "aws:cdk:cloudformation:props": {
+                            "maxCapacity": 1000,
+                            "minCapacity": 1,
+                            "resourceId": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "table/",
+                                  {
+                                    "Ref": "Fsmtable75D185003D"
+                                  }
+                                ]
+                              ]
+                            },
+                            "roleArn": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":iam::",
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ":role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+                                ]
+                              ]
+                            },
+                            "scalableDimension": "dynamodb:table:ReadCapacityUnits",
+                            "serviceNamespace": "dynamodb"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-applicationautoscaling.CfnScalableTarget",
+                          "version": "1.110.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-applicationautoscaling.ScalableTarget",
+                      "version": "1.110.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-applicationautoscaling.BaseScalableAttribute",
+                  "version": "1.110.1"
+                }
+              },
+              "WriteScaling": {
+                "id": "WriteScaling",
+                "path": "CdkWorkshopStack/Fsm_table75/WriteScaling",
+                "children": {
+                  "Target": {
+                    "id": "Target",
+                    "path": "CdkWorkshopStack/Fsm_table75/WriteScaling/Target",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "CdkWorkshopStack/Fsm_table75/WriteScaling/Target/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApplicationAutoScaling::ScalableTarget",
+                          "aws:cdk:cloudformation:props": {
+                            "maxCapacity": 1000,
+                            "minCapacity": 1,
+                            "resourceId": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "table/",
+                                  {
+                                    "Ref": "Fsmtable75D185003D"
+                                  }
+                                ]
+                              ]
+                            },
+                            "roleArn": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":iam::",
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ":role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+                                ]
+                              ]
+                            },
+                            "scalableDimension": "dynamodb:table:WriteCapacityUnits",
+                            "serviceNamespace": "dynamodb"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "@aws-cdk/aws-applicationautoscaling.CfnScalableTarget",
+                          "version": "1.110.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "@aws-cdk/aws-applicationautoscaling.ScalableTarget",
+                      "version": "1.110.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-applicationautoscaling.BaseScalableAttribute",
+                  "version": "1.110.1"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-dynamodb.Table",
-              "version": "1.108.1"
+              "version": "1.110.1"
             }
           },
-          "MyFirstStream": {
-            "id": "MyFirstStream",
-            "path": "CdkWorkshopStack/MyFirstStream",
+          "MySourceStream": {
+            "id": "MySourceStream",
+            "path": "CdkWorkshopStack/MySourceStream",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "CdkWorkshopStack/MyFirstStream/Resource",
+                "path": "CdkWorkshopStack/MySourceStream/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Kinesis::Stream",
                   "aws:cdk:cloudformation:props": {
                     "shardCount": 3,
-                    "name": "my-awesome-stream",
+                    "name": "fsm-source-stream",
                     "retentionPeriodHours": 48,
                     "streamEncryption": {
                       "Fn::If": [
@@ -204,13 +250,13 @@
                 },
                 "constructInfo": {
                   "fqn": "@aws-cdk/aws-kinesis.CfnStream",
-                  "version": "1.108.1"
+                  "version": "1.110.1"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/aws-kinesis.Stream",
-              "version": "1.108.1"
+              "version": "1.110.1"
             }
           },
           "AwsCdkKinesisEncryptedStreamsUnsupportedRegions": {
@@ -218,7 +264,45 @@
             "path": "CdkWorkshopStack/AwsCdkKinesisEncryptedStreamsUnsupportedRegions",
             "constructInfo": {
               "fqn": "@aws-cdk/core.CfnCondition",
-              "version": "1.108.1"
+              "version": "1.110.1"
+            }
+          },
+          "MyDestinationStream": {
+            "id": "MyDestinationStream",
+            "path": "CdkWorkshopStack/MyDestinationStream",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "CdkWorkshopStack/MyDestinationStream/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Kinesis::Stream",
+                  "aws:cdk:cloudformation:props": {
+                    "shardCount": 1,
+                    "name": "fsm-destination-stream",
+                    "retentionPeriodHours": 24,
+                    "streamEncryption": {
+                      "Fn::If": [
+                        "AwsCdkKinesisEncryptedStreamsUnsupportedRegions",
+                        {
+                          "Ref": "AWS::NoValue"
+                        },
+                        {
+                          "EncryptionType": "KMS",
+                          "KeyId": "alias/aws/kinesis"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "@aws-cdk/aws-kinesis.CfnStream",
+                  "version": "1.110.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/aws-kinesis.Stream",
+              "version": "1.110.1"
             }
           },
           "CDKMetadata": {
@@ -230,7 +314,7 @@
                 "path": "CdkWorkshopStack/CDKMetadata/Default",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.CfnResource",
-                  "version": "1.108.1"
+                  "version": "1.110.1"
                 }
               },
               "Condition": {
@@ -238,25 +322,25 @@
                 "path": "CdkWorkshopStack/CDKMetadata/Condition",
                 "constructInfo": {
                   "fqn": "@aws-cdk/core.CfnCondition",
-                  "version": "1.108.1"
+                  "version": "1.110.1"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/core.Construct",
-              "version": "1.108.1"
+              "version": "1.110.1"
             }
           }
         },
         "constructInfo": {
           "fqn": "@aws-cdk/core.Stack",
-          "version": "1.108.1"
+          "version": "1.110.1"
         }
       }
     },
     "constructInfo": {
       "fqn": "@aws-cdk/core.App",
-      "version": "1.108.1"
+      "version": "1.110.1"
     }
   }
 }
